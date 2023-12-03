@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  react-app:
+    image: my-react-vite-app
+    build:
+      context: ./FE
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - "/app/FE/node_modules"
+      - "./FE/:/app/FE"
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1 
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true  
+
+  express-app:
+    image: my-express-app
+    build:
+      context: ./BE
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/app/BE/node_modules"
+      - "./BE/:/app/BE"
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1

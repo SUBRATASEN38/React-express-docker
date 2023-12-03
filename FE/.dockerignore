@@ -1,0 +1,38 @@
+# Ignore built artifacts
+build
+dist
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+.pnp
+.pnp.js
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Misc
+.DS_Store
+.env*
+.chglog
+npm-debug.log
+yarn-error.log
+*.pyc
+*.db
+*.sqlite
+
+# IDE folders
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
